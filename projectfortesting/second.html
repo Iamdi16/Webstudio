@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>тест</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+        }
+        .simple-shadow {
+            box-shadow: 10px 10px 5px grey;
+        }
+        .blurred-shadow {
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+        }
+        .inset-shadow {
+            box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        .multiple-shadows {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box simple-shadow"></div>
+        <div class="box blurred-shadow"></div>
+        <div class="box inset-shadow"></div>
+        <div class="box multiple-shadows"></div>
+    </div>
+</body>
+</html>
+
