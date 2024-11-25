@@ -159,13 +159,12 @@ clip: rect(0 0 0 0);
  .contacts-list-item:hover {
  color: #2196F3;
   } 
-
+  .contacts-list-item:hover  .contacts-icon {
+    fill: #2196F3;
+     }
   .contacts-icon {
   fill: #757575;
 }
- .contacts-icon:hover {
-  fill: #2196F3;
-} 
 
     
    /* ==================================section-hero========================== */
@@ -269,10 +268,32 @@ clip: rect(0 0 0 0);
 }
   .work-list {
     display: flex;
-    align-content: center;
+    justify-content: space-between;
+    column-gap: 30px;
+    position: relative;
+    margin: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.work-list-item > .label {
+  width: 362px;
+  height: 70px;
+  position: absolute;
+  bottom: 0px;
+  margin: 0;
+  padding: 27px 0 27px 0;
+  border-bottom-left-radius: 4px;
+  overflow: hidden; 
+  background-color: rgba(47, 48, 58, 0.80);
+  color: #FFF;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 700px;
+  letter-spacing: 0.42px;
+  text-transform: uppercase; 
+}
 
-
-  }
     .section-work-title {
     color: #212121;
     text-align: center;
@@ -283,16 +304,7 @@ clip: rect(0 0 0 0);
     text-align: center;
     margin-top: 47px;
     margin-bottom: 50px;
-
 }
- .work-list {
-  column-gap: 30px;
-  display: flex;
-  justify-content: space-between;
- 
-
- }
-   
   
    /* ======================================section-team============================= */
    .section-team {
@@ -323,6 +335,7 @@ clip: rect(0 0 0 0);
       border-radius: 0px 0px 4px 4px; 
      background: #fff; 
      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px 0px rgba(0, 0, 0, 0.20);
+     padding-bottom: 30px;
     }
   
    .team-list-title {
@@ -332,7 +345,8 @@ clip: rect(0 0 0 0);
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.48px;
-    margin: 30px 0 10px 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
    } 
    
    
@@ -343,22 +357,35 @@ clip: rect(0 0 0 0);
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.48px;
+    margin-bottom: 16px;
    }
    .team-list-icons {
-    gap: 34px;
     display: flex;
     justify-content: center;
     align-items: center; 
+    border-radius: 0;
+    transition: all 0.3s ease;
    }
+   .team-social-item {
+    border-radius: 50%;
+    padding: 12px;
+   }
+   .team-social-item:hover {
+    background-color:#2196F3;
+   }
+   .team-social-item:hover .team-list-icon {
+    fill: #FFF;
+   }
+   .team-link {
+    display: flex;
+   }
+   
+   
    .team-list-icon {
     fill: #AFB1B8;
-    margin-bottom: 30px;
-    margin-top: 16px;
-
-    
-    }
-   
-   
+}
+ 
+  
    /* ===========================================section-review==================== */
    
     .section-review-title {
@@ -423,8 +450,13 @@ clip: rect(0 0 0 0);
    
    .footer {
  background-color: #2F303A;
- 
-}
+ padding-top: 60px;
+ padding-bottom: 60px;
+   }
+   .flex-container {
+    display: flex;
+    justify-content: space-between;
+   }
 
 .footer-logo {
   color: #fff;
@@ -433,21 +465,13 @@ clip: rect(0 0 0 0);
   font-weight: 700;
   letter-spacing: 0.78px;
 }
-.adress {
-  /* width: auto;
-  display: inline-block;
-  padding: 0;
-  margin: 0; */
-}
+
  .adress-list {
   color: rgba(255, 255, 255, 0.60);
   font-size: 14px;
   font-weight: 400;
   line-height: 171.429%; 
   letter-spacing: 0.42px;
-  width: auto;
-  display: inline-block;
-
 }
 
 .adress-list-desc {
@@ -457,6 +481,7 @@ clip: rect(0 0 0 0);
   font-weight: 400;
   line-height: 171.429%; 
   letter-spacing: 0.42px;
+  margin-top: 20px;
  }
 
  .adress-list-item {
@@ -475,19 +500,27 @@ font-weight: 700;
 letter-spacing: 0.42px;
 text-transform: uppercase;
 text-align: center;
+margin-top: 10px;
 }
 .actions-footer-list{
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: 20px;
+}
+.actions-footer-item {
+  background-color: rgba(255, 255, 255, 0.10);
+  border-radius: 50%;
+  padding: 12px;
 }
 .actions-footer-icon {
   fill: #FFF;
-  background-color: rgba(255, 255, 255, 0.10);
-  ;
 }
-.actions-footer-icons:hover {
+.actions-footer-item:hover {
   background-color: #2196F3;
+}
+.actions-footer-link {
+  display: flex;
 }
 .footer-button{
   width: 200px;
@@ -508,15 +541,22 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.42px;
-  text-transform: uppercase
+  text-transform: uppercase;
   }
   
   .form-footer-input {
+  width: 350px;
+  height: 50px;
   background-color: #2F303A;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
+  padding-left: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   }
   
   .form-footer-submit-button{
@@ -532,9 +572,13 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   background-color: #2196F3;
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  }
+  margin-top: 45px;
+  
+}
   .form-footer-icon {
     fill: #FFF;
+    margin-top: 13px;
+
   }
 
 
